@@ -1,0 +1,11 @@
+{
+  "camelcase": true,
+  "latedef": true,
+  "maxparams": 4,  //每个函数最多4个成熟
+  "maxdepth": 3,  //每个函数嵌套不能超过3层
+  "maxstatements": 50,
+  "maxlen": 80,
+  "esversion": 6,
+  "sub": true,
+  "node": true
+}
