@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --profile --colors --hot --host 0.0.0.0 ",
-    "build": "webpack --progress --profile --colors",
+    "build": "webpack --watch --progress --profile --colors",
     "test": "mocha start",
     "start": "nodemon ./server/server.js",
     "production": "node ./server/server.js NODE_ENV='\"production\"'",
