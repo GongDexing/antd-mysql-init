@@ -8,6 +8,7 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports = {
   entry: {
+    vendor: ['react','react-dom'],
     app: path.resolve(APP_PATH, 'index.js')
   },
   output: {
@@ -46,6 +47,7 @@ module.exports = {
       title: '智能推送',
       template: 'template.ejs'
     }),
+    new webpack.optimize.CommonsChunkPlugin('vendor',  'vendor.js'),
     new webpack.DefinePlugin({
       'process.env':{
         'NODE_ENV': JSON.stringify('development')
