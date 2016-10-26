@@ -8,12 +8,13 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports = {
   entry: {
-    vendor: ['react','react-dom'], //将react的库文件单独打包，避免bundle文件过大
+    //将react的库文件单独打包，避免bundle文件过大
+    vendor: ['react','react-dom','react-redux','redux', 'redux-thunk'],
     app: path.resolve(APP_PATH, 'index.js')
   },
   output: {
     path: BUILD_PATH,
-    filename: 'bundle.js'
+    filename: '[name].[hash:5].js'
   },
   module: {
     loaders: [
@@ -37,6 +38,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new HtmlwebpackPlugin({
+      title: '智能推送',
+      template: 'template.ejs'
+    }),
     new webpack.optimize.CommonsChunkPlugin('vendor',  'vendor.js'),
     new webpack.optimize.UglifyJsPlugin({
       output: {
